@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piazza San Pietro e la Basilica</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-brand" onclick="scrollToTop()">San Pietro</div>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#planimetria" onclick="closeMenu()">La Planimetria</a></li>
+            <li><a href="#baldacchino" onclick="closeMenu()">Il Baldacchino</a></li>
+            <li><a href="#cupola" onclick="closeMenu()">La Cupola</a></li>
+            <li><a href="#pieta" onclick="closeMenu()">La Pietà</a></li>
+            <li><a href="#porte" onclick="closeMenu()">Le Porte</a></li>
+            <li><a href="#sitografia" onclick="closeMenu()">Sitografia</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Piazza San Pietro<br><span>e la Basilica</span></h1>
+            <p class="hero-subtitle">Un viaggio nel cuore della cristianità</p>
+            <p class="hero-credits">A cura di Diego, Carolina, Antonio Luca, Emma, Pietro</p>
+            <a href="#planimetria" class="hero-cta">Esplora</a>
+        </div>
+    </header>
+
+    <!-- SEZIONE: LA PLANIMETRIA -->
+    <section class="section" id="planimetria">
+        <div class="section-container">
+            <h2 class="section-title">La Planimetria</h2>
+            <div class="section-card">
+                <div class="card-image-wrapper">
+                    <img src="img/placeholder.svg" alt="Planimetria della Basilica di San Pietro" class="card-image" data-section="planimetria">
+                </div>
+                <div class="card-brief">
+                    <p>La pianta della Basilica di San Pietro è il frutto di secoli di progettazione, dal progetto a croce greca di Bramante alla croce latina di Maderno. Con i suoi 218 metri di lunghezza, rappresenta la più grande chiesa della cristianità.</p>
+                    <button class="btn-scopri" onclick="toggleDetails('planimetria')">
+                        <span class="btn-text">Scopri di più</span>
+                        <span class="btn-arrow">▼</span>
+                    </button>
+                </div>
+                <div class="card-details" id="details-planimetria">
+                    <div class="details-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. La basilica fu costruita per volontà di papa Giulio II a partire dal 1506, sul luogo dove sorgeva l'antica basilica costantiniana del IV secolo.</p>
+                        <p>Il progetto originale fu affidato a Donato Bramante, che concepì un edificio a pianta centrale con una grande cupola. Dopo la sua morte nel 1514, si susseguirono diversi architetti tra cui Raffaello, Antonio da Sangallo il Giovane e infine Michelangelo, che riprese e semplificò il progetto di Bramante.</p>
+                        <div class="details-images">
+                            <img src="img/placeholder.svg" alt="Dettaglio planimetria 1">
+                            <img src="img/placeholder.svg" alt="Dettaglio planimetria 2">
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        <p>Nel 1607, Carlo Maderno fu incaricato di allungare la navata trasformando la pianta da croce greca a croce latina, aggiungendo anche la facciata monumentale completata nel 1614. La piazza antistante fu poi progettata da Gian Lorenzo Bernini tra il 1656 e il 1667, con il celebre colonnato ellittico composto da 284 colonne e 88 pilastri.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEZIONE: IL BALDACCHINO -->
+    <section class="section section-alt" id="baldacchino">
+        <div class="section-container">
+            <h2 class="section-title">Il Baldacchino</h2>
+            <div class="section-card">
+                <div class="card-image-wrapper">
+                    <img src="img/placeholder.svg" alt="Baldacchino di San Pietro" class="card-image" data-section="baldacchino">
+                </div>
+                <div class="card-brief">
+                    <p>Il Baldacchino di San Pietro, capolavoro di Gian Lorenzo Bernini, si erge maestoso sotto la cupola michelangiolesca. Alto quasi 29 metri a copertura dell'altare papale, è la più grande struttura in bronzo al mondo.</p>
+                    <button class="btn-scopri" onclick="toggleDetails('baldacchino')">
+                        <span class="btn-text">Scopri di più</span>
+                        <span class="btn-arrow">▼</span>
+                    </button>
+                </div>
+                <div class="card-details" id="details-baldacchino">
+                    <div class="details-content">
+                        <p>Commissionato da papa Urbano VIII Barberini nel 1624, il Baldacchino fu completato nel 1633. Bernini aveva solo 25 anni quando iniziò quest'opera monumentale che avrebbe segnato la storia dell'arte barocca.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Le quattro colonne tortili, ispirate alle colonne salomoniche dell'antica basilica, sono decorate con rami d'ulivo e api, simbolo araldico della famiglia Barberini.</p>
+                        <div class="details-images">
+                            <img src="img/placeholder.svg" alt="Dettaglio baldacchino 1">
+                            <img src="img/placeholder.svg" alt="Dettaglio baldacchino 2">
+                        </div>
+                        <p>Per realizzare questa struttura colossale furono necessarie enormi quantità di bronzo. Secondo la tradizione, parte del bronzo fu prelevato dal rivestimento del pronao del Pantheon, dando origine alla celebre frase: "Quod non fecerunt barbari, fecerunt Barberini".</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEZIONE: LA CUPOLA -->
+    <section class="section" id="cupola">
+        <div class="section-container">
+            <h2 class="section-title">La Cupola</h2>
+            <div class="section-card">
+                <div class="card-image-wrapper">
+                    <img src="img/placeholder.svg" alt="Cupola di San Pietro" class="card-image" data-section="cupola">
+                </div>
+                <div class="card-brief">
+                    <p>La Cupola di San Pietro, progettata da Michelangelo Buonarroti, domina lo skyline di Roma con i suoi 136 metri di altezza. È considerata il più grande capolavoro architettonico del Rinascimento e simbolo universale della città eterna.</p>
+                    <button class="btn-scopri" onclick="toggleDetails('cupola')">
+                        <span class="btn-text">Scopri di più</span>
+                        <span class="btn-arrow">▼</span>
+                    </button>
+                </div>
+                <div class="card-details" id="details-cupola">
+                    <div class="details-content">
+                        <p>Michelangelo ricevette l'incarico nel 1546, all'età di 72 anni, e lavorò al progetto fino alla morte nel 1564. La cupola fu completata da Giacomo della Porta e Domenico Fontana nel 1590, mantenendo sostanzialmente il disegno originale.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Il diametro interno della cupola misura 42,56 metri, leggermente inferiore a quello del Pantheon. La struttura è composta da due calotte concentriche collegate da costoloni.</p>
+                        <div class="details-images">
+                            <img src="img/placeholder.svg" alt="Dettaglio cupola 1">
+                            <img src="img/placeholder.svg" alt="Dettaglio cupola 2">
+                        </div>
+                        <p>All'interno della cupola, un'iscrizione in lettere alte 2 metri riporta le parole di Cristo a Pietro: "Tu es Petrus et super hanc petram aedificabo ecclesiam meam et tibi dabo claves regni caelorum" (Tu sei Pietro e su questa pietra edificherò la mia Chiesa e a te darò le chiavi del regno dei cieli).</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. I mosaici che decorano l'interno raffigurano Cristo, la Vergine, gli Apostoli e santi vari.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEZIONE: LA PIETÀ -->
+    <section class="section section-alt" id="pieta">
+        <div class="section-container">
+            <h2 class="section-title">La Pietà</h2>
+            <div class="section-card">
+                <div class="card-image-wrapper">
+                    <img src="img/placeholder.svg" alt="La Pietà di Michelangelo" class="card-image" data-section="pieta">
+                </div>
+                <div class="card-brief">
+                    <p>La Pietà vaticana, scolpita da Michelangelo tra il 1498 e il 1499, è l'unica opera firmata dall'artista. Raffigura la Vergine Maria che sorregge il corpo di Cristo deposto dalla croce, in un momento di dolore sublime e composto.</p>
+                    <button class="btn-scopri" onclick="toggleDetails('pieta')">
+                        <span class="btn-text">Scopri di più</span>
+                        <span class="btn-arrow">▼</span>
+                    </button>
+                </div>
+                <div class="card-details" id="details-pieta">
+                    <div class="details-content">
+                        <p>Michelangelo aveva solo 24 anni quando completò questa scultura, commissionata dal cardinale francese Jean de Bilhères. L'opera fu realizzata in un unico blocco di marmo di Carrara e misura 174 x 195 cm.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. La firma dell'artista — "MICHAEL ANGELUS BONAROTUS FLORENTINUS FACIEBAT" — si trova sulla fascia che attraversa il petto della Madonna, ed è l'unica opera che Michelangelo abbia mai firmato.</p>
+                        <div class="details-images">
+                            <img src="img/placeholder.svg" alt="Dettaglio Pietà 1">
+                            <img src="img/placeholder.svg" alt="Dettaglio Pietà 2">
+                        </div>
+                        <p>Nel 1972, la scultura subì un grave atto vandalico quando un geologo ungherese, Laszlo Toth, la colpì con un martello danneggiando il viso e il braccio sinistro della Madonna. Dopo un accurato restauro, la Pietà è ora protetta da un vetro antiproiettile.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEZIONE: LE PORTE -->
+    <section class="section" id="porte">
+        <div class="section-container">
+            <h2 class="section-title">Le Porte</h2>
+            <p class="porte-intro">La facciata della Basilica di San Pietro presenta cinque porte monumentali, ciascuna con una storia e un significato unico. Scorri per esplorarle tutte.</p>
+            
+            <div class="porte-carousel-wrapper">
+                <button class="carousel-btn carousel-prev" id="prevPorta" aria-label="Porta precedente">‹</button>
+                
+                <div class="porte-carousel" id="porteCarousel">
+                    <!-- Porta della Morte -->
+                    <div class="porta-slide" data-porta="0">
+                        <div class="porta-card">
+                            <div class="card-image-wrapper">
+                                <img src="img/placeholder.svg" alt="Porta della Morte" class="card-image">
+                            </div>
+                            <h3 class="porta-name">Porta della Morte</h3>
+                            <div class="card-brief">
+                                <p>Realizzata da Giacomo Manzù tra il 1952 e il 1964 su commissione di papa Giovanni XXIII, la Porta della Morte è riservata al transito dei cortei funebri papali.</p>
+                                <button class="btn-scopri" onclick="toggleDetails('porta-morte')">
+                                    <span class="btn-text">Scopri di più</span>
+                                    <span class="btn-arrow">▼</span>
+                                </button>
+                            </div>
+                            <div class="card-details" id="details-porta-morte">
+                                <div class="details-content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. La porta rappresenta diversi episodi legati al tema della morte, tra cui la morte di Maria, la morte in terra, la morte nello spazio e la morte per violenza.</p>
+                                    <div class="details-images">
+                                        <img src="img/placeholder.svg" alt="Dettaglio Porta della Morte">
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Porta del Bene e del Male -->
+                    <div class="porta-slide" data-porta="1">
+                        <div class="porta-card">
+                            <div class="card-image-wrapper">
+                                <img src="img/placeholder.svg" alt="Porta del Bene e del Male" class="card-image">
+                            </div>
+                            <h3 class="porta-name">Porta del Bene e del Male</h3>
+                            <div class="card-brief">
+                                <p>Opera dello scultore Luciano Minguzzi, completata nel 1977, questa porta raffigura scene che simboleggiano la lotta eterna tra il bene e il male attraverso episodi biblici e storici.</p>
+                                <button class="btn-scopri" onclick="toggleDetails('porta-bene-male')">
+                                    <span class="btn-text">Scopri di più</span>
+                                    <span class="btn-arrow">▼</span>
+                                </button>
+                            </div>
+                            <div class="card-details" id="details-porta-bene-male">
+                                <div class="details-content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. I pannelli in bronzo illustrano episodi come il martirio dei santi, la guerra, l'oppressione ma anche la carità, la fede e la speranza.</p>
+                                    <div class="details-images">
+                                        <img src="img/placeholder.svg" alt="Dettaglio Porta del Bene e del Male">
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Porta Centrale (del Filarete) -->
+                    <div class="porta-slide" data-porta="2">
+                        <div class="porta-card">
+                            <div class="card-image-wrapper">
+                                <img src="img/placeholder.svg" alt="Porta Centrale del Filarete" class="card-image">
+                            </div>
+                            <h3 class="porta-name">Porta Centrale (del Filarete)</h3>
+                            <div class="card-brief">
+                                <p>La più antica delle cinque porte, realizzata da Antonio Averulino detto il Filarete tra il 1439 e il 1445 per l'antica basilica. I pannelli in bronzo raffigurano Cristo, la Madonna, San Paolo e San Pietro.</p>
+                                <button class="btn-scopri" onclick="toggleDetails('porta-filarete')">
+                                    <span class="btn-text">Scopri di più</span>
+                                    <span class="btn-arrow">▼</span>
+                                </button>
+                            </div>
+                            <div class="card-details" id="details-porta-filarete">
+                                <div class="details-content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Questa porta è l'unica sopravvissuta dall'antica basilica costantiniana. Fu commissionata da papa Eugenio IV e rappresenta uno dei più importanti esempi di scultura rinascimentale in bronzo.</p>
+                                    <div class="details-images">
+                                        <img src="img/placeholder.svg" alt="Dettaglio Porta del Filarete">
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Porta dei Sacramenti -->
+                    <div class="porta-slide" data-porta="3">
+                        <div class="porta-card">
+                            <div class="card-image-wrapper">
+                                <img src="img/placeholder.svg" alt="Porta dei Sacramenti" class="card-image">
+                            </div>
+                            <h3 class="porta-name">Porta dei Sacramenti</h3>
+                            <div class="card-brief">
+                                <p>Opera di Venanzo Crocetti, inaugurata nel 1966, questa porta celebra i sette sacramenti della Chiesa cattolica attraverso pannelli in bronzo di grande espressività artistica.</p>
+                                <button class="btn-scopri" onclick="toggleDetails('porta-sacramenti')">
+                                    <span class="btn-text">Scopri di più</span>
+                                    <span class="btn-arrow">▼</span>
+                                </button>
+                            </div>
+                            <div class="card-details" id="details-porta-sacramenti">
+                                <div class="details-content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ciascun pannello rappresenta uno dei sacramenti: Battesimo, Cresima, Eucaristia, Penitenza, Unzione degli infermi, Ordine sacro e Matrimonio.</p>
+                                    <div class="details-images">
+                                        <img src="img/placeholder.svg" alt="Dettaglio Porta dei Sacramenti">
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Porta Santa -->
+                    <div class="porta-slide" data-porta="4">
+                        <div class="porta-card">
+                            <div class="card-image-wrapper">
+                                <img src="img/placeholder.svg" alt="Porta Santa" class="card-image">
+                            </div>
+                            <h3 class="porta-name">Porta Santa</h3>
+                            <div class="card-brief">
+                                <p>La Porta Santa viene aperta dal Papa solo durante gli Anni Santi (Giubilei). Realizzata da Vico Consorti nel 1950, i suoi 16 pannelli in bronzo raccontano la storia della salvezza.</p>
+                                <button class="btn-scopri" onclick="toggleDetails('porta-santa')">
+                                    <span class="btn-text">Scopri di più</span>
+                                    <span class="btn-arrow">▼</span>
+                                </button>
+                            </div>
+                            <div class="card-details" id="details-porta-santa">
+                                <div class="details-content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. La tradizione della Porta Santa risale al Giubileo del 1500. Il rito prevede che il Papa bussi tre volte con un martello sulla porta murata, che viene poi aperta per permettere ai pellegrini di ottenere l'indulgenza plenaria.</p>
+                                    <div class="details-images">
+                                        <img src="img/placeholder.svg" alt="Dettaglio Porta Santa">
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-btn carousel-next" id="nextPorta" aria-label="Porta successiva">›</button>
+            </div>
+
+            <!-- Indicatori carousel -->
+            <div class="carousel-indicators" id="carouselIndicators">
+                <span class="indicator active" data-index="0"></span>
+                <span class="indicator" data-index="1"></span>
+                <span class="indicator" data-index="2"></span>
+                <span class="indicator" data-index="3"></span>
+                <span class="indicator" data-index="4"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEZIONE: SITOGRAFIA -->
+    <section class="section section-alt" id="sitografia">
+        <div class="section-container">
+            <h2 class="section-title">Sitografia</h2>
+            <div class="sitografia-list">
+                <ul>
+                    <li><a href="https://www.vatican.va/various/basiliche/san_pietro/index_it.htm" target="_blank" rel="noopener">Vatican.va — Basilica di San Pietro</a></li>
+                    <li><a href="https://it.wikipedia.org/wiki/Basilica_di_San_Pietro_in_Vaticano" target="_blank" rel="noopener">Wikipedia — Basilica di San Pietro in Vaticano</a></li>
+                    <li><a href="https://it.wikipedia.org/wiki/Piazza_San_Pietro" target="_blank" rel="noopener">Wikipedia — Piazza San Pietro</a></li>
+                    <li><a href="https://it.wikipedia.org/wiki/Baldacchino_di_San_Pietro" target="_blank" rel="noopener">Wikipedia — Baldacchino di San Pietro</a></li>
+                    <li><a href="https://it.wikipedia.org/wiki/Cupola_di_San_Pietro" target="_blank" rel="noopener">Wikipedia — Cupola di San Pietro</a></li>
+                    <li><a href="https://it.wikipedia.org/wiki/Piet%C3%A0_vaticana" target="_blank" rel="noopener">Wikipedia — Pietà vaticana</a></li>
+                    <li><span class="placeholder-ref">[Aggiungi qui altre fonti dal documento]</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2026 — Piazza San Pietro e la Basilica</p>
+        <p>A cura di Diego, Carolina, Antonio Luca, Emma, Pietro</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

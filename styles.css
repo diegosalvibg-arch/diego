@@ -1,0 +1,678 @@
+/* ===== RESET & BASE ===== */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: #2c2c2c;
+    background: #faf9f6;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 1.5rem;
+    background: rgba(30, 30, 30, 0.92);
+    backdrop-filter: blur(10px);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.navbar.scrolled {
+    background: rgba(20, 20, 20, 0.98);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+
+.nav-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #d4af37;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.8rem;
+}
+
+.nav-links a {
+    color: #e8e8e8;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #d4af37;
+    transition: width 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #d4af37;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Hamburger */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: #e8e8e8;
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.nav-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ===== HERO ===== */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Basilica_di_San_Pietro_in_Vaticano_September_2015-1a.jpg/1280px-Basilica_di_San_Pietro_in_Vaticano_September_2015-1a.jpg') center center / cover no-repeat;
+    background-attachment: fixed;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(15, 15, 15, 0.65) 0%,
+        rgba(15, 15, 15, 0.45) 50%,
+        rgba(15, 15, 15, 0.75) 100%
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 2rem 1.5rem;
+    max-width: 700px;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 15px rgba(0,0,0,0.4);
+}
+
+.hero-content h1 span {
+    font-size: 2.2rem;
+    font-weight: 400;
+    display: block;
+    color: #d4af37;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: #ddd;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.hero-credits {
+    font-size: 0.9rem;
+    color: #bbb;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.hero-cta {
+    display: inline-block;
+    padding: 0.8rem 2.5rem;
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+
+.hero-cta:hover {
+    background: #d4af37;
+    color: #1a1a1a;
+    transform: translateY(-2px);
+}
+
+/* ===== SECTIONS ===== */
+.section {
+    padding: 5rem 1.5rem;
+}
+
+.section-alt {
+    background: #f0ece3;
+}
+
+.section-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: #1a1a1a;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #d4af37;
+    margin: 0.7rem auto 0;
+    border-radius: 2px;
+}
+
+/* ===== SECTION CARDS ===== */
+.section-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+}
+
+.card-image-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: #e8e4dc;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.section-card:hover .card-image {
+    transform: scale(1.03);
+}
+
+.card-brief {
+    padding: 1.8rem 2rem 1.5rem;
+}
+
+.card-brief p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 1.2rem;
+}
+
+/* SCOPRI DI PIU' BUTTON */
+.btn-scopri {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+
+.btn-scopri:hover {
+    background: #d4af37;
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.btn-scopri .btn-arrow {
+    font-size: 0.7rem;
+    transition: transform 0.3s;
+}
+
+.btn-scopri.open .btn-arrow {
+    transform: rotate(180deg);
+}
+
+/* DETAILS PANEL */
+.card-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease;
+}
+
+.card-details.open {
+    max-height: 3000px;
+}
+
+.details-content {
+    padding: 0 2rem 2rem;
+    border-top: 1px solid #eee;
+}
+
+.details-content p {
+    margin-top: 1.2rem;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.details-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.details-images img {
+    border-radius: 8px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background: #e8e4dc;
+}
+
+/* ===== LE PORTE — CAROUSEL ===== */
+.porte-intro {
+    text-align: center;
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.porte-carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.porte-carousel {
+    overflow: hidden;
+    width: 100%;
+    border-radius: 12px;
+}
+
+.porta-slide {
+    display: none;
+}
+
+.porta-slide.active {
+    display: block;
+    animation: fadeSlide 0.4s ease;
+}
+
+@keyframes fadeSlide {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.porta-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+}
+
+.porta-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    padding: 1.2rem 2rem 0;
+    color: #1a1a1a;
+}
+
+.porta-card .card-brief {
+    padding-top: 0.8rem;
+}
+
+.porta-card .card-details .details-content {
+    padding-top: 0;
+}
+
+/* Carousel buttons */
+.carousel-btn {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid #d4af37;
+    background: rgba(255,255,255,0.95);
+    color: #d4af37;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+    z-index: 2;
+}
+
+.carousel-btn:hover {
+    background: #d4af37;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Indicators */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.indicator.active {
+    background: #d4af37;
+    transform: scale(1.2);
+}
+
+/* ===== SITOGRAFIA ===== */
+.sitografia-list {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+}
+
+.sitografia-list ul {
+    list-style: none;
+}
+
+.sitografia-list li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.95rem;
+}
+
+.sitografia-list li:last-child {
+    border-bottom: none;
+}
+
+.sitografia-list a {
+    color: #2a6496;
+    transition: color 0.3s;
+}
+
+.sitografia-list a:hover {
+    color: #d4af37;
+    text-decoration: underline;
+}
+
+.placeholder-ref {
+    color: #999;
+    font-style: italic;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background: #1a1a1a;
+    color: #999;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    font-size: 0.85rem;
+}
+
+.footer p + p {
+    margin-top: 0.4rem;
+    color: #666;
+}
+
+/* ===================================================================
+   RESPONSIVE — MOBILE FIRST (priorità telefono)
+   =================================================================== */
+
+/* ---- Fino a 768px (TELEFONO) ---- */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        max-width: 300px;
+        height: 100vh;
+        background: rgba(20, 20, 20, 0.98);
+        flex-direction: column;
+        padding: 5rem 2rem 2rem;
+        gap: 1.5rem;
+        transition: right 0.4s ease;
+        box-shadow: -5px 0 30px rgba(0,0,0,0.3);
+    }
+
+    .nav-links.open {
+        right: 0;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+    }
+
+    /* Hero mobile */
+    .hero {
+        background-attachment: scroll; /* fix iOS */
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content h1 span {
+        font-size: 1.4rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .hero-credits {
+        font-size: 0.8rem;
+    }
+
+    /* Sections mobile */
+    .section {
+        padding: 3rem 1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .card-brief {
+        padding: 1.2rem 1.2rem 1rem;
+    }
+
+    .details-content {
+        padding: 0 1.2rem 1.5rem;
+    }
+
+    .details-images {
+        grid-template-columns: 1fr;
+    }
+
+    /* Porte mobile */
+    .porta-name {
+        font-size: 1.25rem;
+        padding: 1rem 1.2rem 0;
+    }
+
+    .carousel-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1.2rem;
+    }
+
+    .porte-intro {
+        font-size: 0.9rem;
+        padding: 0 0.5rem;
+    }
+
+    /* Sitografia mobile */
+    .sitografia-list {
+        padding: 1.2rem;
+    }
+}
+
+/* ---- Telefono piccolo (fino a 380px) ---- */
+@media (max-width: 380px) {
+    .hero-content h1 {
+        font-size: 1.7rem;
+    }
+
+    .hero-content h1 span {
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .btn-scopri {
+        font-size: 0.75rem;
+        padding: 0.5rem 1.2rem;
+    }
+
+    .carousel-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+}
+
+/* ---- Tablet (769px - 1024px) ---- */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .section-container {
+        max-width: 750px;
+    }
+}
+
+/* ---- Desktop grande (1025px+) ---- */
+@media (min-width: 1025px) {
+    .navbar {
+        padding: 0.8rem 3rem;
+    }
+
+    .section {
+        padding: 6rem 2rem;
+    }
+
+    .hero-content h1 {
+        font-size: 3.8rem;
+    }
+
+    .hero-content h1 span {
+        font-size: 2.6rem;
+    }
+}
+
+/* ===== TOUCH SWIPE HINT (mobile) ===== */
+.swipe-hint {
+    display: none;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .swipe-hint {
+        display: block;
+    }
+}
+
+/* ===== SMOOTH SCROLL OFFSET for fixed navbar ===== */
+section[id] {
+    scroll-margin-top: 70px;
+}
