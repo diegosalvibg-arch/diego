@@ -350,6 +350,53 @@ img {
     background: #e8e4dc;
 }
 
+.details-content h3 {
+    margin-top: 2rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: #2c2c2c;
+}
+
+.details-content h4 {
+    margin-top: 0.8rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #444;
+    margin-bottom: 0.3rem;
+}
+
+.details-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1.2rem;
+}
+
+.details-columns.three-col {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.details-columns p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #555;
+    margin-top: 0;
+}
+
+.details-images.three-col {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.details-content blockquote {
+    margin: 1.2rem 0;
+    padding: 1rem 1.5rem;
+    border-left: 3px solid #d4af37;
+    background: #f9f7f2;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: #444;
+}
+
 /* ===== LE PORTE — CAROUSEL ===== */
 .porte-intro {
     text-align: center;
@@ -579,6 +626,18 @@ img {
     }
 
     .details-images {
+        grid-template-columns: 1fr;
+    }
+
+    .details-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .details-columns.three-col {
+        grid-template-columns: 1fr;
+    }
+
+    .details-images.three-col {
         grid-template-columns: 1fr;
     }
 
