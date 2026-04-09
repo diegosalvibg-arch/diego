@@ -253,15 +253,14 @@ img {
 
 .card-image-wrapper {
     width: 100%;
-    aspect-ratio: 16 / 10;
     overflow: hidden;
     background: #e8e4dc;
 }
 
 .card-image {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    display: block;
     transition: transform 0.5s;
 }
 
@@ -345,9 +344,16 @@ img {
 
 .details-images img {
     border-radius: 8px;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
+    width: 100%;
+    height: auto;
+    display: block;
     background: #e8e4dc;
+}
+
+.details-images img:only-child {
+    grid-column: 1 / -1;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .details-content h3 {
