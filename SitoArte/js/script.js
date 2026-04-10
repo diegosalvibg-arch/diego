@@ -48,11 +48,11 @@ function toggleDetails(sectionId) {
     if (details.classList.contains('open')) {
         details.classList.remove('open');
         button.classList.remove('open');
-        button.querySelector('.btn-text').textContent = 'Scopri di più';
+        button.querySelector('.btn-text').textContent = 'Leggi di più';
     } else {
         details.classList.add('open');
         button.classList.add('open');
-        button.querySelector('.btn-text').textContent = 'Chiudi';
+        button.querySelector('.btn-text').textContent = 'Leggi di meno';
     }
 }
 
@@ -72,7 +72,7 @@ function showSlide(index) {
             const btn = slide.querySelector('.btn-scopri');
             if (btn) {
                 btn.classList.remove('open');
-                btn.querySelector('.btn-text').textContent = 'Scopri di più';
+                btn.querySelector('.btn-text').textContent = 'Leggi di più';
             }
         }
     });
@@ -166,6 +166,29 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 }, observerOptions);
+
+// ===== INJECT DETAILS FOOTER (Leggi di meno + Sitografia link) =====
+document.querySelectorAll('.details-content').forEach(content => {
+    const footer = document.createElement('div');
+    footer.className = 'details-footer';
+
+    // Find the sectionId for this details panel
+    const detailsPanel = content.closest('.card-details');
+    const sectionId = detailsPanel ? detailsPanel.id.replace('details-', '') : '';
+
+    footer.innerHTML = `
+        <button class="btn-leggi-meno" onclick="toggleDetails('${sectionId}')">
+            <span>▲</span> Leggi di meno
+        </button>
+        <a href="#sitografia" class="btn-sitografia">Vai alla Sitografia →</a>
+    `;
+    content.appendChild(footer);
+});
+
+// ===== CHANGE INITIAL BUTTON TEXT =====
+document.querySelectorAll('.btn-scopri .btn-text').forEach(span => {
+    span.textContent = 'Leggi di più';
+});
 
 document.querySelectorAll('.section-card, .porta-card, .sitografia-list').forEach(el => {
     el.style.opacity = '0';
